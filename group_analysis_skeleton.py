@@ -141,10 +141,10 @@ t-test_faces = scipy.stats.ttest_rel(faces-white/pleasant, faces-black/pleasant)
 print('\nOVERALL: {:.2f}%, {:.1f} ms'.format(100*acc_avg,mrt_avg))
 
 #stim avg 
-print("\nWORD AVERAGES: {:.2f}%, {:.1f} ms".format(word_accuracy_avg, word_mrt_average))
-print("\nFACE AVERAGES: {:.2f}%, {:.1f} ms".format(face_accuracy_avg, face_mrt_average))
+print("\nWORD AVERAGES: {:.2f}%, {:.1f} ms".format(100*word_accuracy_avg, word_mrt_average))
+print("\nFACE AVERAGES: {:.2f}%, {:.1f} ms".format(100*face_accuracy_avg, face_mrt_average))
 ##condition avg
-print("\nACCURACY AVERAGES FOR WHITE/BLACK PLEASANT: {:.2f}%, {:.1f}".format(accuracy_wp,accuracy_bp))
+print("\nACCURACY AVERAGES FOR WHITE/BLACK PLEASANT: {:.2f}%, {:.1f}".format(100*accuracy_wp,accuracy_bp))
 print("\nREACTION TIME AVERAGES FOR WHITE/BLACK PLEASANT: {:.2f}%, {:.1f} ms".format(mrt_wp,mrt_bp))
 print("\nREACTION TIME AVERAGES FOR WORDS FOR WHITE PLEASANT: {:.2f} ms".format(words-white/pleasant))
 print("\nREACTION TIME AVERAGES FOR WORDS FOR BLACK PLEASANT: {:.2f} ms".format(words-black/pleasant))
