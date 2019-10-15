@@ -67,6 +67,7 @@ word_mrt_avg = np.mean(word_RT)
 
 face_accuracy_avg = np.mean(face_accuracy)*100
 face_mrt_avg = np.mean(face_RT)
+
 #%%
 # calculate averages (accuracy & RT) split by congruency using indexing, 
 # slicing, and numpy's mean function 
@@ -86,8 +87,8 @@ for i in range(92):
         accuracy_bp_list.append(data[i][3])
         mrt_bp_list.append(data[i][4])
 
-acc_wp = np.mean(accuracy_wp_list)*100  # 94.0%
-acc_bp = np.mean(accuracy_bp_list)*100  # 88.9%
+accuracy_wp = np.mean(accuracy_wp_list)*100  # 94.0%
+accuracy_bp = np.mean(accuracy_bp_list)*100  # 88.9%
 mrt_wp = np.mean(mrt_wp_list) # 469.6ms
 mrt_bp = np.mean(mrt_bp_list)  # 485.1ms
 
@@ -126,8 +127,8 @@ faces-black/pleasant = np.mean(faces_bp) #469.9ms
 #
 import scipy.stats
 
-t-test_words = scipy.stats.ttest_rel(words_wp, words_bp)
-t-test_faces = scipy.stats.ttest_rel(faces_wp, faces_bp)
+t-test_words = scipy.stats.ttest_rel(words-white/pleasant, words-black/pleasant)
+t-test_faces = scipy.stats.ttest_rel(faces-white/pleasant, faces-black/pleasant)
 
 # words: t=-5.36, p=2.19e-5
 # faces: t=-2.84, p=0.0096
@@ -140,15 +141,15 @@ t-test_faces = scipy.stats.ttest_rel(faces_wp, faces_bp)
 print('\nOVERALL: {:.2f}%, {:.1f} ms'.format(100*acc_avg,mrt_avg))
 
 #stim avg 
-print("\nWORD AVERAGES: {:.2f}%, {:.1f} ms".format(word_accuray_avg, word_mrt_average))
-print("\nFACE AVERAGES: {:.2f}%, {:.1f} ms".format(face_accuray_avg, face_mrt_average))
+print("\nWORD AVERAGES: {:.2f}%, {:.1f} ms".format(word_accuracy_avg, word_mrt_average))
+print("\nFACE AVERAGES: {:.2f}%, {:.1f} ms".format(face_accuracy_avg, face_mrt_average))
 ##condition avg
-print("\nACCURACY AVERAGES FOR WHITE/BLACK PLEASANT: {:.2f}%, {:.2f} ms".format(accuracy_wp,accuracy_bp))
-print("\nREACTION TIME AVERAGES FOR WHITE/BLACK PLEASANT: {:.2f}%, {:.2f} ms".format(mrt_wp,mrt_bp))
-print("\nREACTION TIME AVERAGES FOR WORDS FOR WHITE PLEASANT: {:.1f}".format(words-white/pleasant))
-print("\nREACTION TIME AVERAGES FOR WORDS FOR BLACK PLEASANT: {:.1f}".format(words-black/pleasant))
-print("\nREACTION TIME AVERAGES FOR FACES FOR WHITE PLEASANT: {:.1f}".format(faces-white/pleasant))
-print("\nREACTION TIME AVERAGES FOR FACES FOR BLACK PLEASANT: {:.1f}".format(faces-black/pleasant))
+print("\nACCURACY AVERAGES FOR WHITE/BLACK PLEASANT: {:.2f}%, {:.1f} ms".format(accuracy_wp,accuracy_bp))
+print("\nREACTION TIME AVERAGES FOR WHITE/BLACK PLEASANT: {:.2f}%, {:.1f} ms".format(mrt_wp,mrt_bp))
+print("\nREACTION TIME AVERAGES FOR WORDS FOR WHITE PLEASANT: {:.2f} ms".format(words-white/pleasant))
+print("\nREACTION TIME AVERAGES FOR WORDS FOR BLACK PLEASANT: {:.2f} ms".format(words-black/pleasant))
+print("\nREACTION TIME AVERAGES FOR FACES FOR WHITE PLEASANT: {:.2f} ms".format(faces-white/pleasant))
+print("\nREACTION TIME AVERAGES FOR FACES FOR BLACK PLEASANT: {:.2f} ms".format(faces-black/pleasant))
 #ttest 
-print("\nT-TEST STATS FOR WORDS: {:.2f}".format(stats_words))
-print("\nT-TEST STATS FOR FACES: {:.2f}".format(stats_faces))
+print("\nT-TEST STATS FOR WORDS: {:.2f}".format(t-test_words))
+print("\nT-TEST STATS FOR FACES: {:.2f}".format(t-test_faces))
